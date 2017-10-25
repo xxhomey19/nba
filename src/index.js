@@ -62,7 +62,7 @@ function searchPlayers (str) {
 
 function updatePlayers () {
   return nba.stats.playersInfo().then(function (data) {
-    nba.players = data;
+    nba.players = require('./util/build-players')(data);
     return data;
   });
 }
